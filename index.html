@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouthguard Impact Testing - Engineering Capstone Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="smoothScroll('hero')">Mouthguard Impact Testing</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="smoothScroll('team')">About Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="smoothScroll('background')">Background</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="smoothScroll('design')">Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="smoothScroll('results')">Results/Findings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="smoothScroll('acknowledgment')">Acknowledgment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="smoothScroll('final-report')">Final Report</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <video id="hero-video" autoplay loop muted playsinline>
+            <source src="hero_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="container text-center" data-aos="fade-down" data-aos-duration="2000">
+            <h4 class="display-4">University of Victoria</h4>
+            <h1 class="display-4">Mouthguard Impact Testing</h1>
+            <p class="lead">2023 ECE/BME 499 Capstone Project Group 1</p>
+            <a href="#" onclick="smoothScroll('team')" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About the Team Section -->
+    <section id="team" class="bg-dark text-white">
+        <div class="container py-5" data-aos="fade-up">
+            <h2 class="animated-header">About the Team</h2>
+            <p>
+                In this project group, there are five members - two biomedical engineering students specializing in mechanical systems and three electrical/computer engineering students. Together, we have split up into a BME and an ECE team - the BME team oversees the development of the jaw test model and the ECE team is in charge of developing the force sensing system. Both teams will collaborate on developing a testing system to detect and measure impact forces on the upper jaw.
+            </p>
+        </div>
+
+        <!-- Add team member images here -->
+        <div class="image-container" data-aos="fade-up">
+            <div class="image-box">
+                <img src="rudra.jpg" alt="Team Member 1">
+                <div class="description"><b> Sabrina Bogdanski </b></div>
+                <div class="description">BME</div>
+                <div class="description">Impact Testing Lead</div>
+            </div>
+            <div class="image-box">
+                <img src="rudra.jpg" alt="Team Member 2">
+                <div class="description"><b>Kieran Wild</b></div>
+                <div class="description">BME</div>
+                <div class="description">CAD Model Design Lead</div>
+            </div>
+            <div class="image-box">
+                <img src="rudra.jpg" alt="Team Member 3">
+                <div class="description"><b>Serena Foster</b></div>
+                <div class="description">ECE</div>
+                <div class="description">PCB Design Lead</div>
+            </div>
+            <div class="image-box">
+                <img src="rudra.jpg" alt="Team Member 4">
+                <div class="description"><b>Kayla Kalhous</b></div>
+                <div class="description">ECE</div>
+                <div class="description">Sensor Calibration Lead</div>
+            </div>
+            <div class="image-box">
+                <img src="rudra.jpg" alt="Team Member 5">
+                <div class="description"><b>Rudra Aryan Potluri</b></div>
+                <div class="description">ECE</div>
+                <div class="description">Programming Lead</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Background Section -->
+    <section id="background" class="bg-primary text-white">
+        <div class="container py-5" data-aos="fade-up">
+            <h2 class="animated-header">Background</h2>
+            <p>
+                Impact during physical activity such as sports is very common and can lead to minor and serious injury. Our capstone project goal is to create a human jaw model with sensors on the teeth to develop a system to measure impact forces on the teeth to create a base for safety rating development for sports mouthguards, specifically in rugby, as there is currently no standardized system set up. We will incorporate biomechanical analysis with electrical systems to complete this project. Data collection and impact force analysis will occur on the front of the jaw/teeth with and without a mouthguard. Due to project constraints, sensors will not be placed on every tooth and bite force will not be measured. After data collection and analysis, recommendations will be made about impact testing methods that can be used across mouthguards in rugby.
+            </p>
+        </div>
+    </section>
+
+    <!-- Design Section -->
+    <section id="design" class="bg-success text-white">
+        <div class="container py-5" data-aos="fade-up">
+            <h2 class="animated-header">Design</h2>
+            <!-- You can add the design content here later -->
+            <p>
+                Our Design Prototype and testing setup consists of a 3D printed mechanical human jaw model with piezoresistive sensors attached on the 
+                teeth of the upper jaw. The sensors are controlled by an Arduino microcontroller and the impact testing is done by manually adjusting the drop height on the drop
+                tower and measuring the voltage changes after impact with the sensors with and without mouthguards present. 
+            </p>
+            <!-- Add background image here -->
+            
+        </div>
+
+        <div class="image-container" >
+            <div class="image-box" data-aos="fade-right">
+                <img src="cad_model.jpg" alt="Design Image 1">
+                <div class="description">
+                    <p>
+                        The jaw model was 3D printed out of PETG filament in multiple pieces. This filament was chosen because it was readily available and stronger than PLA filament,
+                        which is known for easily breaking. The model was printed in four main pieces to increase the speed of the 3D printing process and to minimize the amount
+                        of supports used during printing. The four pieces of the model are the upper jaw, lower jaw and two side arms. The two side arms are connected to the lower 
+                        jaw by a set of bolts and nuts on each side of the lower jaw. This assembly is then attached to the upper jaw though a pair of bearings located on the upper 
+                        jaw.
+                    </p>
+                </div>
+            </div>
+            <div class="image-box" data-aos="fade-left">
+                <div class="video-container">
+                    <video width="100%" autoplay loop muted class="animated-video" >
+                        <source src="sensor.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-description">The sensor chosen for the project is the Tekscan FlexiForce A201-100, which is a piezoresistive sensor that can be configured to measure up to 4.48kN of 
+                        force with a 5 µs response time. It has a sensing area diameter of approximately 1 cm, a width of 1.4 cm, and a length of 19.1 cm.
+                        The sensor is flexible, and the long stem ensures that the sensor can connect to the PCB which will be outside of the direct impact area.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results/Findings Section -->
+    <section id="results" class="bg-warning">
+        <div class="container py-5"  data-aos="fade-up">
+            <h2 class="animated-header">Results and Findings</h2>
+            <p>
+                Impact Testing Set-up and Procedure:
+            </p>
+            <p>
+                The test setup consists of a drop tower with a 5kg drop assembly and a load cell under a metal plate. The load cell is used for sensor calibration as well as 
+                validation during impact testing. The drop height chosen for our testing was 4cm due to creating a maximum force of 4kN in order to not overload the sensors.
+            </p>
+            <!-- Add the labeled drop tower image here -->
+            <div class="image-box" data-aos="fade-up">
+                <img src="Drop_test.png" alt="Design Image 2">
+            </div>
+            <p data-aos="fade-up">
+                The overall impact test method procedure developed for this project was as follows:
+            </p>
+            <ol data-aos="fade-up">
+                <li>Put safety glasses on. Ensure the drop assembly is secured with a clamp.</li>
+                <li>Place the testing model onto the drop tower plate so that the sensor will contact the drop assembly head-on.</li>
+                <li>Tape the testing model in place.</li>
+                <li>Move the drop assembly to the desired height and record the height.</li>
+                <li>Ensure the sensor code is ready.</li>
+                <li>Announce that the drop is about to occur and release the assembly.</li>
+                <li>Save graphs and record the max peak value.</li>
+                <li>After re-adjusting the model on the plate, repeat steps 4-7 twice more to ensure repeatability.</li>
+                <li>Place the mouthguard on the model and repeat steps 4-8.</li>
+            </ol>
+
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <!-- Add the videos in a 2x2 grid -->
+                    <div class="col-md-6">
+                        <div class="video-container">
+                            <video width="100%" autoplay loop muted class="animated-video" >
+                                <source src="hero_video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="video-description">Without Mouthguard</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="video-container">
+                            <video width="100%" autoplay loop muted class="animated-video" >
+                                <source src="499_testdrop_20.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="video-description">Mouthguard 1</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="video-container">
+                            <video width="100%" autoplay loop muted class="animated-video" >
+                                <source src="499_testdrop_24.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="video-description">Mouthguard 2</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="video-container">
+                            <video width="100%" autoplay loop muted class="animated-video" >
+                                <source src="499_testdrop_30.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="video-description">Mouthguard 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Each test using the drop tower was repeated three times to ensure repeatability. The force sensors in the load cell are used to validate the sensors during each impact test as well. After testing our model with integrated sensors, we have found that having a mouthguard indeed decreases the force measured on the teeth. Also, between mouthguard types, there was seen to be a correlation between the type of material and design of the mouthguard and the amount of force measured by the sensors. The softer the material, the more force absorption. However, due to repeated testing, the material will be compressed and no longer absorb force but contribute to the amount of force impacting the teeth.
+            </p>
+            <div class="image-container" >
+                <div class="image-box" data-aos="fade-right">
+                    <img src="without mouthguard.png" alt="Design Image 1">
+                    <div class="description">
+                        <p>
+                            Force Plot without Mouthguard
+                        </p>
+                    </div>
+                </div>
+                <div class="image-box" data-aos="fade-left">
+                    <img src="mouthguard 1.png" alt="Design Image 2">
+                    <div class="description">
+                        <p>
+                            Force Plot with Mouthguard
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acknowledgment Section -->
+    <section id="acknowledgment" class="bg-info text-white">
+        <div class="container py-5"  data-aos="fade-up">
+            <h2 class="animated-header">Acknowledgment</h2>
+            <p>
+                We would like to thank our supervisor, Dr. Chris Dennison, for making us aware of this topic, for providing us with a testing and production lab, taking the time to give feedback about our project progress, and for helping in any way he could. Thank you to the following people for providing us with electrical components and lab access Brent Sirna, Paul Fedrigo, and Rob Fitchner. We would also like to thank the lab supervisor, Aaron Brice and the lab co-ops, Alan Smith and Catherine Wong, for helping us 3D print and use the impact testing machine. We would like to acknowledge the Department of Biomedical Engineering and Co-operative Education and Work-Integrated Learning Canada (CEWIL Canada) for providing us with project funding. Also, thank you to our course professor, Dr. Sana Shuja, and teaching assistant, Upasana Kapoor, that helped us with any inquiries and remain accountable for our progress throughout the project duration.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final Report Section -->
+    <section id="final-report" class="bg-dark text-white">
+        <div class="container py-5"  data-aos="fade-up">
+            <h2 class="animated-header">Final Report</h2>
+            <p>
+                <!-- If embedding the report, you can use an iframe element. -->
+                <!-- Example: <iframe src="link_to_your_report.pdf" width="100%" height="500px"></iframe> -->
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2023 ECE/BME 499 Capstone Project Group 1 </p>
+            <p>University of Victoria</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- AOS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@3.0.0-beta.6/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
