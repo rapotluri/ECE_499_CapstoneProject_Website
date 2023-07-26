@@ -90,72 +90,179 @@ section {
 
 /* Navigation Bar */
 .navbar {
-    background-color: #0081C9; /* Change the background color to a darker shade (#2c3e50) */
-    position: relative;
-    z-index: 1001;
-    padding: 10px; /* Add padding to the navigation bar */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    transition: top 0.4s;
+    background-color: #0081C9 !important;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
-    font-size: 1.6rem; /* Increase the font size of the title */
-    font-weight: bold; /* Add bold font weight to the title */
-    padding-left: 20px; /* Add padding to the left of the title */
-    padding-right: 20px;
-    color: #fff; /* Change the title text color to white */
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
 }
 
 .navbar-nav {
-    text-align: center;
-    padding-left: 100px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-item {
+    margin-left: 15px;
+    
+}
+.navbar-container {
     display: flex;
-    white-space: nowrap;
-    padding: 5px 25px;
+    justify-content: space-between; /* Distribute elements horizontally */
+    align-items: center; /* Center elements vertically */
 }
-
-.nav-link,
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff; /* Change the link text color to white */
+.nav-link {
+    color: #fff !important;
     text-decoration: none;
-    padding: 5px 20px; /* Adjust the horizontal padding between links */
-    transition: background-color 0.2s ease, transform 0.4s ease; /* Add smooth transitions on hover */
     border-bottom: 2px solid white;
-}
-
-.nav-link:hover {
-    text-decoration: none;
-    background-color: rgba(250, 8, 8, 0.1); /* Add a background color on hover */
-    border-radius: 3px; /* Add a slight border radius on hover */
-    transform: scale(1.1); /* Add a slight scale effect on hover */
     transition: background-color 0.2s ease, transform 0.4s ease;
 }
 
-/* Custom CSS for Absolute Left Logo/Title */
-@media (min-width: 768px) {
-    .navbar-brand {
-        position: absolute;
-        left: 20px; /* Adjust as needed */
-    }
-
-    #navbarCollapse {
-        margin-left: 50%; /* Adjust as needed */
-        transform: translateX(-50%);
-    }
+.nav-link:hover {
+    background-color: rgba(250, 8, 8, 0.1);
+    border-radius: 3px;
+    transform: scale(1.1);
+    transition: background-color 0.2s ease, transform 0.4s ease;
+    
 }
 
-/* Add new class for fixed navbar */
-.navbar-fixed {
+.navbar-fixed-top {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    animation: ease 0.4s; /* Add a slide-down animation when the navbar becomes fixed */
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+
+/* Hamburger Icon Styles */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
 }
 
 
+/* Center the links for larger screens */
+@media (min-width: 768px) {
+    .navbar .navbar-container {
+        display: flex;
+        justify-content: space-between; /* Align title to the left and links to the right */
+        align-items: center; /* Center elements vertically */
+    }
+
+    .navbar-nav {
+        position: absolute; /* Position the links absolutely within the container */
+        top: 50%; /* Position the links 50% from the top */
+        left: 50%; /* Position the links 50% from the left */
+        transform: translate(-50%, -50%); /* Center the links properly */
+        display: flex;
+        justify-content: center; /* Center the links */
+        align-items: center; /* Vertically center the links */
+        gap: 10px; /* Add some gap between the links for spacing */
+        flex-wrap: wrap; /* Allow links to wrap to a new line if needed */
+    }
+
+    .nav-item {
+        margin: 0 10px; /* Adjust the margin as needed */
+        
+    }
+}
+
+/* Adjust Navbar for Bigger Screens */
+@media (min-width: 992px) {
+    .navbar-container {
+        padding: 0 20px; /* Add some padding on the sides for spacing */
+        max-width: 100%; /* Ensure the navbar container takes full width */
+    }
+
+    .navbar-links {
+        display: flex;
+        justify-content: center; /* Center the links */
+        gap: 20px; /* Add some gap between the links for spacing */
+    }
+
+    .navbar-title {
+        margin-right: 0; /* Remove the previous margin-right */
+    }
+}
+
+
+
+/* Center the title for smaller screens */
+@media (max-width: 767px) {
+    .navbar .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-links.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-links.active .nav-item {
+        margin: 10px 0;
+    }
+
+    /* Adjust title size for smaller screens */
+    .navbar-brand {
+        font-size: 1.2rem;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+    }
+}
+
+/* Adjust Navbar for Screens between 992px and 1768px */
+@media (min-width: 992px) and (max-width: 1768px) {
+    .navbar .navbar-container {
+        justify-content: center;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin: 5px; /* Add some space around the links */
+        flex-basis: calc(25% - 10px); /* Ensure each link takes up at most 25% of the container width minus margins */
+        max-width: 150px; /* Set a maximum width for each link */
+        white-space: nowrap; /* Prevent link text from wrapping */
+        overflow: visible; /* Hide any overflowing text */
+        font-size: 0.9vw;
+    }
+
+    .nav-link a{
+        font-size: 0.4vw;
+    }
+
+    /* Adjust title size for screens between 992px and 1768px */
+    .navbar-brand {
+        font-size: 1.2rem;
+        font-size: 1.5vw;
+    }
+}
 /* Hero Section */
 #hero {
     position: relative;
@@ -192,6 +299,7 @@ section {
     transition: background-color 0.3s ease;
     border-radius: 5px;
 }
+
 
 #hero video {
     position: absolute;
@@ -238,7 +346,7 @@ text-align: center;
 #team .image-box img {
 max-width: 100%;
 height: auto;
-border: 2px solid #FFC93C;
+border: 3px solid #FFC93C;
 }
 
 #team .description {
@@ -249,6 +357,9 @@ justify-content: center;
 
 #team .description b {
     font-size: 1.5rem;
+    padding-left: 5px ;
+    padding-right: 5px ;
+    border-bottom: 1px solid #FFC93C;
 }
 
 /*Design*/
@@ -256,55 +367,77 @@ justify-content: center;
     overflow: hidden;
 }
 
-
-/* Add a style for the image container to create a grid layout */
+/* Add a style for the image container to create a 2 by 2 grid layout */
 #design .image-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 5 columns for About the Team images */
-    gap: 10px; /* Add gap between images */
+    grid-template-columns: 1fr 1fr; /* 2 columns for the images and videos */
+    grid-template-rows: auto auto; /* 2 rows for images and descriptions */
+    gap: 20px; /* Add gap between images and videos */
     justify-items: center; /* Center items horizontally within each column */
     margin-left: 10px;
     margin-right: 20px;
 }
 
 /* Add a style for the image box to center the images and descriptions */
-#design .image-box {
-    text-align: center;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#design .grid-item.image-box img {
+    max-width: 100%;
+    max-height: 600px;
+    border: 2px solid #FFC93C;
 }
 
-#design .image-box img {
-max-width: 100%;
-max-height: 600px;
-border: 2px solid #FFC93C;
+#design .grid-item.video-box video {
+    max-width: 800px;
+    max-height: 100%;
+    border: 2px solid #FFC93C;
+    justify-content: center;
 }
 
 #design .description {
-margin-top: 10px;
-padding: 10px 40px 0px 40px;
-max-width: 800px;
-text-align: left;
-}
-
-
-#design .animated-video {
-    border: 2px solid #FFC93C;
+    margin-top: 10px;
+    padding: 10px;
     max-width: 800px;
-    display: flex;
-    align-items: right;
-    margin-top: 80px;
-    margin-left: 20px;
+    text-align: left;
 }
 
-#design .video-description {
-    display: flex;
-    justify-content: left;
+/* Apply the same styling to both descriptions */
+#design .description {
     text-align: left;
-    margin-top: 105px;
+    margin-top: 20px;
+    display: block;
+    max-height: auto;
 }
+
+/* Define grid areas for layout */
+@media (min-width: 768px) {
+    #design .image-container {
+        grid-template-areas:
+            "image1 video1"
+            "desc1 desc2"; /* Define grid layout */
+    }
+
+    #design .image-box {
+        grid-area: image1; /* Place the image box in the specified grid area */
+    }
+
+    #design .video-box {
+        grid-area: video1; /* Place the video box in the specified grid area */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #design .desc1 {
+        grid-area: desc1; /* Place the first description in the specified grid area */
+        display: block;
+        
+    }
+
+    #design .desc2 {
+        grid-area: desc2; /* Place the second description in the specified grid area */
+        display: block;
+    }
+}
+
 
 /*Findings*/
 #results {
@@ -403,11 +536,14 @@ img {
 section h2,
 section h3,
 section h4,
-section h5,
 section h6 {
     border-bottom: 2px solid #FFC93C;
     padding-bottom: 10px;
     margin-bottom: 20px;
+}
+
+section h5 {
+    font-size: 2rem;
 }
 
 #results h2 {
